@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kimi No Nawa|Videos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/videosstyle.css">
+    
+   
+    
+    
+</head>
+<body style="background-color: #eee;">
+    <nav class="navbar navbar-expand-lg navbar-light" style=" position:fixed; z-index: 1000; top:0px; left:0px; right:0px;     background:linear-gradient(to left,rgb(60, 140, 121), rgb(62, 92, 115) 90%);;">
+        <a class="navbar-brand" href="#">
+            <img src="images/pngegg (2).png" width="40" height="35" class="d-inline-block align-top" alt="">
+           Your Name.
+          </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+              <a class="nav-link" style="color: wheat" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: wheat;" href="photos.html">Photos</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="songs.html" style="color: wheat;">
+                Songs
+              </a>
+              
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="color: wheat;"   href="videos.html">Videos</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    <h3 class="heading">Video Gallery</h3>
+    <div class="container">
+      <div class="main-video">
+        <div class="video">
+          <video src="images/vid-1.mp4" controls muted autoplay>
+          </video>
+          <h3 class="title">01. Your Name|Scenes in real life</h3>
+        </div>
+      </div>
+      <div class="video-list">
+        <div class="vid active">
+          <video src="images/vid-1.mp4" muted>
+          </video>
+          <h3 class="title" style="font-size: 20px;">01. Your Name|Scenes in real life</h3>
+        </div>
+        <div class="vid">
+          <video src="images/vid-2.mp4" muted>
+          </video>
+          <h3 class="title"  style="font-size: 20px;">02. Your Name|Mitsuha meets Taki</h3>
+        </div>
+        <div class="vid">
+          <video src="images/vid-3.mp4" muted>
+          </video>
+          <h3 class="title"  style="font-size: 20px;">03. Your Name|I love you scene</h3>
+        </div>
+        <div class="vid">
+          <video src="images/vid-4.mp4" muted>
+          </video>
+          <h3 class="title"  style="font-size: 20px;">04. Your Name|Ending scene</h3>
+        </div>
+        <div class="vid">
+          <video src="images/vid-5.mp4" muted>
+          </video>
+          <h3 class="title"  style="font-size: 20px;">05. Your Name|Edit</h3>
+        </div>
+        <div class="vid">
+          <video src="images/vid-6.mp4" muted>
+          </video>
+          <h3 class="title"  style="font-size: 20px;">06. Your Name|Visuals</h3>
+        </div>
+        <div class="vid">
+          <video src="images/vid-7.mp4" muted>
+          </video>
+          <h3 class="title"  style="font-size: 20px;">06. Your Name|Orchestra</h3>
+        </div>
+        
+
+      </div>
+    </div>
+    
+
+
+   <script>
+    let listVideo = document.querySelectorAll('.video-list .vid');
+    let mainVideo = document.querySelector('.main-video video');
+    let title = document.querySelector('.main-video .title');
+
+    listVideo.forEach(video =>{
+      video.onclick = () =>{
+        listVideo.forEach(vid => vid.classList.remove('active'));
+        video.classList.add('active');
+        if(video.classList.contains('active')){
+          let src = video.children[0].getAttribute('src');
+          mainVideo.src = src;
+          let text = video.children[1].innerHTML;
+          title.innerHTML = text;
+        };
+      };
+    });
+    </script>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+</body>
+</html>
